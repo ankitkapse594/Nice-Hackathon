@@ -1,69 +1,101 @@
-# 🛡️ NICE KYC & AML Onboarding Checker
-> **Nice Software Solutions — Innovation Hackathon (Use Case 3: Banking)**  
-> Autonomous Customer Onboarding, Identity Consistency Verification, Multi-Tier Fuzzy Watchlist Screening, and Continuous Sanctions Rescreening.
+# 🛡️ NICE AML & KYC Onboarding Checker
+
+> **Nice Software Solutions — Innovation Hackathon 2026 (Banking Use Case 3)**  
+> **Live Website:** [https://nice-aml-kyc-checker.netlify.app](https://nice-aml-kyc-checker.netlify.app)
 
 ---
 
-## 🚀 Quick Start (Single Command Run)
+## 💡 What is this project? (In simple words)
 
-To run the application locally on your laptop:
+When you open a bank account, the bank has to make sure:
+1. You are who you say you are (**KYC — Know Your Customer**).
+2. You are not a criminal, fraudster, or on an international blacklist (**AML — Anti-Money Laundering**).
+
+Normally, banks take **24 to 48 hours** with humans manually checking IDs, documents, and government lists.
+
+**Our application does this entire process in under 1 second.**  
+It automatically verifies customer details against government ID records, uses smart algorithms to catch disguised names and typos, and gives bank compliance officers a clean, simple dashboard to approve clean people and flag suspicious ones.
+
+---
+
+## ⚡ How to Run It on Your Computer (Quick & Easy)
+
+You only need **Node.js** installed. Run these two commands in your terminal:
 
 ```bash
-# 1. Install dependencies
+# 1. Download packages
 npm install
 
-# 2. Launch application
+# 2. Start the project
 npm run dev
 ```
 
-Open your browser at **`http://localhost:5173`**.
+Now open your web browser and go to:  
+👉 **`http://localhost:5173`**
 
-> [!NOTE]
-> **Zero Configuration Needed:** The portal comes pre-seeded with **100 synthetic applicants**, **100 corresponding government ID records**, and **30 global sanctions targets**. It works **100% offline** without requiring external database setup.
-
----
-
-## 👥 Team Member Feature Ownership
-
-| # | Feature Name | Team Member | Description & Key Innovations |
-| :--- | :--- | :--- | :--- |
-| **1** | **Onboarding Intake & Records** | **Ankit Kapse** | Dynamic customer application modal (DOB, occupation, income, address) with input validation, plus filterable 100-applicant directory table with CSV export. |
-| **2** | **Consistency Checks** | **Shruti Khadatkar** | Real-time cross-referencing between customer form and government registry (`id_records`). Regex ID format validator (Passport, National ID, DL) + visual side-by-side mismatch highlighter. |
-| **3** | **Watchlist Screening & Risk Rating** | **Yash Bharambe** | Dual-tier **Fuzzy Matching Engine** (Levenshtein Distance + Phonetic Soundex) catching spelling variations (*Rajesh Kumar* vs *Rajesh Kumarr*). Multi-factor Low/Med/High risk rating with explainable risk breakdown. |
-| **4** | **Compliance Dashboard & Audit Trail** | **Divyani Katre** | Tabbed adjudication queue (`Pending`, `Under Review`, `Approved`, `Flagged/Rejected`) with mandatory reason codes, officer notes, and an **immutable chronological audit log**. |
-| **5** | **Continuous Watchlist Monitoring & SAR Generator** *(Team's Own Feature)* | **Anurag Pathak** | Solves the hackathon question: *"What happens to existing customers when a new name is added to the watchlist?"* Automatically triggers a batch retroactive scan across all existing accounts upon new sanction ingestion, freezes matching accounts, and generates an official 1-click **Suspicious Activity Report (SAR-101)**. |
+*(Everything is already set up with 100 sample applicants and 30 sample sanctions list entries. You do not need any database or password to test it!)*
 
 ---
 
-## 🌟 Bonus Features Built
-1. **Straight-Through Processing (STP) Fast-Track:** One-click automated instant approval for ultra-clean applicants (< 15 risk score, 100% ID consistency, 0 sanctions score) in under 2 seconds.
-2. **Dual-Persistence Architecture:** Integrated with **Supabase PostgreSQL** via cloud client while providing a zero-latency in-memory / LocalStorage fallback so the demo never fails if venue Wi-Fi drops.
-3. **One-Click Live Demo Presets:** Pre-engineered test cases in modals so presenters can demonstrate near-matches, ID DOB mismatches, and retroactive freezes without manual typing during the 6-minute live pitch.
-4. **Print-Ready Regulatory Filing:** Formats FinCEN/RBI standard regulatory reports with legal narratives and digital sign-off.
+## 👥 Meet the Team & What Everyone Built
+
+Our team has 5 members. Each person took complete ownership of one core part of the system:
+
+### 1. **Ankit Kapse** — Customer Onboarding & Profiles
+- **What Ankit did:** Built the front door of the bank. When new customers apply, his system takes their name, photo ID, job, income, and address.
+- **Key feature:** Added live checks to ensure phone numbers, IDs, and incomes are entered properly, and pre-loaded 100 realistic applicant profiles from 12 countries with instant CSV download.
+
+### 2. **Shruti Khadatkar** — Smart ID Consistency Checker
+- **What Shruti did:** Compares what the customer wrote on their application form against the government's official ID database.
+- **Key feature:** Her algorithm instantly catches sneaky errors, like when a customer flips their birth date (for example, writing `14/06/1988` instead of `06/14/1988`), or when the address doesn't match.
+
+### 3. **Yash Bharambe** — Typo-Proof Watchlist & Sanctions Checker
+- **What Yash did:** Criminals often disguise their names by adding or changing a letter (e.g. typing *Rajesh Kumarr* instead of *Rajesh Kumar*). Yash built a fuzzy algorithm (Levenshtein distance + Soundex phonetics).
+- **Key feature:** Catches names that sound the same or look almost identical, and scores applicants as Low, Medium, or High Risk with clear, human-readable explanations.
+
+### 4. **Divyani Katre** — Compliance Officer Dashboard & Action Log
+- **What Divyani did:** Built the control room for bank compliance officers. Instead of messy spreadsheets, officers see a clean, minimalist queue of applications.
+- **Key feature:** Officers can approve or flag someone with 1 click, enter regulatory reason codes, and every single action is permanently recorded in a tamper-proof audit trail for regulators to inspect.
+
+### 5. **Anurag Pathak** — Automatic Rescreening & 1-Click SAR Report *(Our Hackathon Differentiator)*
+- **What Anurag did:** Solved the biggest real-world question: *"What happens to existing bank customers when a brand new criminal is added to the sanctions list tomorrow?"*
+- **Key feature:** Whenever a new sanction is published, Anurag's engine sweeps through all past approved customers in seconds, automatically freezes any matching accounts, and generates an official, print-ready **FinCEN SAR-101 (Suspicious Activity Report)**.
 
 ---
 
-## 📊 Data Schema & Synthetic Dataset
-Synthetic data is pre-bundled in `src/data/syntheticData.js`:
-- `applicants`: 100 fictional records with diverse occupations, incomes, and countries.
-- `id_records`: 100 official government identity records with engineered edge-case discrepancies (e.g. swapped DOB month, address variance).
-- `watchlist`: 30 global sanctions entries (OFAC, PEP, Cyber AML, Interpol Red Notices) with known aliases and phonetic variations.
-- `compliance_audit_logs`: Initial immutable logs tracking system decisions.
+## 🌟 Cool Features You Can Try in the Demo
+
+### 🔍 1. Click Any Applicant to See Their Whole Story (360° Dossier)
+- Click on any person in the table.
+- A clean window pops up showing everything about them: their personal details, their ID comparison score, watchlist check results, and their history in the bank.
+
+### ⚡ 2. Instant Fast-Track Approval (STP)
+- If someone is clearly clean (no criminal match, 100% ID match), click the green **"Fast-Track STP"** button in the top menu.
+- The system automatically approves all safe applicants in a fraction of a second.
+
+### 🧪 3. Live Algorithmic Sandbox on the Landing Page
+- On the homepage, type any name (like *"Rajesh Kumarr"* or *"Victor Bout"*).
+- Watch our algorithm calculate sound codes and match percentages in real-time right before your eyes!
+
+### 🚨 4. Add a Criminal and Watch the System Auto-Freeze Them
+- Click **"Add Sanction & Rescreen"** in the top bar.
+- Add a new name to the blacklist.
+- The system will immediately re-check all approved customers, catch anyone matching, freeze their account, and prepare an official legal report.
 
 ---
 
-## 🌐 Netlify Deployment
-To build for production or deploy to Netlify:
-```bash
-npm run build
-```
-Netlify configuration is pre-configured in `netlify.toml`.
+## 🛠️ Technology Used
 
----
-
-## 🛠️ Tech Stack
-- **Frontend:** React 18, Vite
+- **Frontend:** React 18, Vite (super fast)
+- **Styling:** Custom CSS with dark mode, glass effects, and clean layouts
 - **Icons:** Lucide React
-- **Algorithms:** Custom Levenshtein Distance, Jaro-Winkler, American Soundex
-- **Cloud Backend:** Supabase PostgreSQL Client (optional via `.env`)
-- **Hosting:** Netlify / Localhost
+- **Algorithms:** Levenshtein Distance (spelling difference) and American Soundex (phonetic sound)
+- **Hosting:** Netlify
+- **Database:** Runs instantly with local sample data, and can optionally connect to Supabase Cloud
+
+---
+
+## 🏆 Hackathon Details
+- **Event:** Nice Software Solutions Innovation Hackathon 2026
+- **Problem Statement:** Use Case 3 — Banking (KYC & AML Onboarding Checker)
+- **Team Members:** Ankit Kapse, Shruti Khadatkar, Yash Bharambe, Divyani Katre, Anurag Pathak
