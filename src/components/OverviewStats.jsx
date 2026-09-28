@@ -13,41 +13,41 @@ export default function OverviewStats({ applicants = [], watchlist = [] }) {
 
   const stats = [
     {
-      title: "Total Ingested Applicants",
+      title: "Total Applicants",
       value: total,
-      subtitle: `${approvedRate}% onboarding completion rate`,
+      subtitle: `${approvedRate}% approved`,
       icon: Users,
       iconColor: "#60a5fa",
-      glowColor: "rgba(96, 165, 250, 0.15)",
-      borderColor: "rgba(96, 165, 250, 0.2)"
+      glowColor: "rgba(96, 165, 250, 0.12)",
+      borderColor: "rgba(255, 255, 255, 0.08)"
     },
     {
-      title: "Pending Compliance Review",
+      title: "Pending Compliance",
       value: pending,
-      subtitle: `${applicants.filter(a => a.status === "Under Review").length} under active investigation`,
+      subtitle: `${applicants.filter(a => a.status === "Under Review").length} in EDD review`,
       icon: Clock,
       iconColor: "#fbbf24",
-      glowColor: "rgba(251, 191, 36, 0.15)",
-      borderColor: "rgba(251, 191, 36, 0.2)"
+      glowColor: "rgba(251, 191, 36, 0.12)",
+      borderColor: pending > 0 ? "rgba(251, 191, 36, 0.3)" : "rgba(255, 255, 255, 0.08)"
     },
     {
-      title: "High Risk / Sanctions Alerts",
+      title: "Sanctions Alerts",
       value: highRisk,
-      subtitle: `${watchlist.length} global sanctions monitored`,
+      subtitle: `${watchlist.length} sanctions monitored`,
       icon: AlertTriangle,
       iconColor: "#f43f5e",
-      glowColor: "rgba(244, 63, 94, 0.2)",
-      borderColor: "rgba(244, 63, 94, 0.35)",
+      glowColor: "rgba(244, 63, 94, 0.15)",
+      borderColor: highRisk > 0 ? "rgba(244, 63, 94, 0.4)" : "rgba(255, 255, 255, 0.08)",
       isAlert: highRisk > 0
     },
     {
-      title: "Automated STP Efficiency",
+      title: "STP Auto-Pass Rate",
       value: `${stpRate}%`,
-      subtitle: `${stpApproved} zero-latency auto-approvals`,
+      subtitle: `${stpApproved} zero-latency approvals`,
       icon: Zap,
       iconColor: "#34d399",
-      glowColor: "rgba(52, 211, 153, 0.15)",
-      borderColor: "rgba(52, 211, 153, 0.2)"
+      glowColor: "rgba(52, 211, 153, 0.12)",
+      borderColor: "rgba(255, 255, 255, 0.08)"
     }
   ];
 

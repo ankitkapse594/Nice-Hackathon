@@ -50,7 +50,7 @@ export default function App() {
     }
   });
 
-  const [activeMainTab, setActiveMainTab] = useState("applicants"); // 'applicants', 'adjudication', 'audit', 'watchlist'
+  const [activeMainTab, setActiveMainTab] = useState("adjudication"); // 'adjudication', 'applicants', 'watchlist', 'audit'
 
   // Application Data State
   const [applicants, setApplicants] = useState([]);
@@ -176,50 +176,21 @@ export default function App() {
         <div style={{
           display: "flex",
           alignItems: "center",
-          gap: 12,
+          gap: 8,
           borderBottom: "1px solid var(--border-subtle)",
           paddingBottom: 14,
           marginBottom: 20,
           overflowX: "auto"
         }}>
           <button
-            onClick={() => setActiveMainTab("applicants")}
-            style={{
-              background: activeMainTab === "applicants" ? "rgba(99, 102, 241, 0.15)" : "transparent",
-              border: activeMainTab === "applicants" ? "1px solid rgba(99, 102, 241, 0.5)" : "1px solid transparent",
-              color: activeMainTab === "applicants" ? "#818cf8" : "var(--text-muted)",
-              padding: "10px 18px",
-              borderRadius: 8,
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              transition: "all 0.15s ease"
-            }}
-          >
-            <Users size={18} />
-            <span>Applicant Intake & Directory (Feature 1 & 2)</span>
-            <span style={{
-              background: "rgba(255,255,255,0.08)",
-              padding: "1px 7px",
-              borderRadius: 10,
-              fontSize: "0.75rem"
-            }}>
-              {applicants.length}
-            </span>
-          </button>
-
-          <button
             onClick={() => setActiveMainTab("adjudication")}
             style={{
-              background: activeMainTab === "adjudication" ? "rgba(99, 102, 241, 0.15)" : "transparent",
-              border: activeMainTab === "adjudication" ? "1px solid rgba(99, 102, 241, 0.5)" : "1px solid transparent",
-              color: activeMainTab === "adjudication" ? "#818cf8" : "var(--text-muted)",
-              padding: "10px 18px",
+              background: activeMainTab === "adjudication" ? "rgba(99, 102, 241, 0.18)" : "transparent",
+              border: activeMainTab === "adjudication" ? "1px solid rgba(99, 102, 241, 0.45)" : "1px solid transparent",
+              color: activeMainTab === "adjudication" ? "#fff" : "var(--text-muted)",
+              padding: "9px 16px",
               borderRadius: 8,
-              fontSize: "0.9rem",
+              fontSize: "0.875rem",
               fontWeight: 600,
               cursor: "pointer",
               display: "flex",
@@ -228,29 +199,29 @@ export default function App() {
               transition: "all 0.15s ease"
             }}
           >
-            <ShieldCheck size={18} />
-            <span>Compliance Adjudication Center (Feature 4)</span>
+            <ShieldCheck size={17} color={activeMainTab === "adjudication" ? "#818cf8" : "var(--text-dim)"} />
+            <span>Compliance Queue</span>
             <span style={{
               background: applicants.filter(a => a.status === "Pending").length > 0 ? "#38bdf8" : "rgba(255,255,255,0.08)",
               color: applicants.filter(a => a.status === "Pending").length > 0 ? "#000" : "var(--text-muted)",
               fontWeight: 700,
               padding: "1px 7px",
               borderRadius: 10,
-              fontSize: "0.75rem"
+              fontSize: "0.72rem"
             }}>
               {applicants.filter(a => a.status === "Pending").length}
             </span>
           </button>
 
           <button
-            onClick={() => setActiveMainTab("watchlist")}
+            onClick={() => setActiveMainTab("applicants")}
             style={{
-              background: activeMainTab === "watchlist" ? "rgba(99, 102, 241, 0.15)" : "transparent",
-              border: activeMainTab === "watchlist" ? "1px solid rgba(99, 102, 241, 0.5)" : "1px solid transparent",
-              color: activeMainTab === "watchlist" ? "#818cf8" : "var(--text-muted)",
-              padding: "10px 18px",
+              background: activeMainTab === "applicants" ? "rgba(99, 102, 241, 0.18)" : "transparent",
+              border: activeMainTab === "applicants" ? "1px solid rgba(99, 102, 241, 0.45)" : "1px solid transparent",
+              color: activeMainTab === "applicants" ? "#fff" : "var(--text-muted)",
+              padding: "9px 16px",
               borderRadius: 8,
-              fontSize: "0.9rem",
+              fontSize: "0.875rem",
               fontWeight: 600,
               cursor: "pointer",
               display: "flex",
@@ -259,13 +230,42 @@ export default function App() {
               transition: "all 0.15s ease"
             }}
           >
-            <Globe2 size={18} />
-            <span>Global Watchlist & Sanctions (Feature 3)</span>
+            <Users size={17} color={activeMainTab === "applicants" ? "#818cf8" : "var(--text-dim)"} />
+            <span>All Applicants</span>
             <span style={{
               background: "rgba(255,255,255,0.08)",
               padding: "1px 7px",
               borderRadius: 10,
-              fontSize: "0.75rem"
+              fontSize: "0.72rem"
+            }}>
+              {applicants.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveMainTab("watchlist")}
+            style={{
+              background: activeMainTab === "watchlist" ? "rgba(99, 102, 241, 0.18)" : "transparent",
+              border: activeMainTab === "watchlist" ? "1px solid rgba(99, 102, 241, 0.45)" : "1px solid transparent",
+              color: activeMainTab === "watchlist" ? "#fff" : "var(--text-muted)",
+              padding: "9px 16px",
+              borderRadius: 8,
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              transition: "all 0.15s ease"
+            }}
+          >
+            <Globe2 size={17} color={activeMainTab === "watchlist" ? "#818cf8" : "var(--text-dim)"} />
+            <span>Sanctions Watchlist</span>
+            <span style={{
+              background: "rgba(255,255,255,0.08)",
+              padding: "1px 7px",
+              borderRadius: 10,
+              fontSize: "0.72rem"
             }}>
               {watchlist.length}
             </span>
@@ -274,12 +274,12 @@ export default function App() {
           <button
             onClick={() => setActiveMainTab("audit")}
             style={{
-              background: activeMainTab === "audit" ? "rgba(99, 102, 241, 0.15)" : "transparent",
-              border: activeMainTab === "audit" ? "1px solid rgba(99, 102, 241, 0.5)" : "1px solid transparent",
-              color: activeMainTab === "audit" ? "#818cf8" : "var(--text-muted)",
-              padding: "10px 18px",
+              background: activeMainTab === "audit" ? "rgba(99, 102, 241, 0.18)" : "transparent",
+              border: activeMainTab === "audit" ? "1px solid rgba(99, 102, 241, 0.45)" : "1px solid transparent",
+              color: activeMainTab === "audit" ? "#fff" : "var(--text-muted)",
+              padding: "9px 16px",
               borderRadius: 8,
-              fontSize: "0.9rem",
+              fontSize: "0.875rem",
               fontWeight: 600,
               cursor: "pointer",
               display: "flex",
@@ -288,13 +288,13 @@ export default function App() {
               transition: "all 0.15s ease"
             }}
           >
-            <History size={18} />
-            <span>Regulatory Audit Trail (Feature 4)</span>
+            <History size={17} color={activeMainTab === "audit" ? "#818cf8" : "var(--text-dim)"} />
+            <span>Audit Trail</span>
             <span style={{
               background: "rgba(255,255,255,0.08)",
               padding: "1px 7px",
               borderRadius: 10,
-              fontSize: "0.75rem"
+              fontSize: "0.72rem"
             }}>
               {auditLogs.length}
             </span>
