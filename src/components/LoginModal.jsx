@@ -3,31 +3,49 @@ import { X, ShieldCheck, Lock, User, Key, ArrowRight, ShieldAlert, Sparkles, Bui
 
 export const DEMO_USERS = [
   {
-    name: "Officer Vikram Mehta",
-    role: "Chief Compliance Officer",
-    roleId: "CHIEF_COMPLIANCE_OFFICER",
-    email: "vikram.mehta@nicebank.com",
-    avatar: "VM",
+    name: "Ankit Kapse",
+    role: "Lead Compliance Architect (Feature 1)",
+    roleId: "ANKIT_KAPSE",
+    email: "ankit.kapse@nicebank.com",
+    avatar: "AK",
     badgeColor: "#34d399",
-    description: "Full regulatory adjudication privileges, SAR issuance & sanctions ingestion."
+    description: "Customer ingestion, data pipeline orchestration, and system administration."
   },
   {
-    name: "Sarah Jenkins",
-    role: "Senior AML Surveillance Analyst",
-    roleId: "AML_ANALYST",
-    email: "sarah.jenkins@nicebank.com",
-    avatar: "SJ",
+    name: "Shruti Khadatkar",
+    role: "Senior Identity Verification Engineer (Feature 2)",
+    roleId: "SHRUTI_KHADATKAR",
+    email: "shruti.khadatkar@nicebank.com",
+    avatar: "SK",
     badgeColor: "#60a5fa",
-    description: "Case file triage, consistency verification & enhanced due diligence (EDD)."
+    description: "Registry cross-referencing, DOB variance detection, and ID regex validation."
   },
   {
-    name: "James Caldwell",
-    role: "FinCEN / FIU Regulatory Auditor",
-    roleId: "REGULATORY_AUDITOR",
-    email: "auditor.caldwell@fincen.gov",
-    avatar: "JC",
-    badgeColor: "#fbbf24",
-    description: "Supervisory oversight, immutable audit trail inspection & SAR filing review."
+    name: "Yash Bharambe",
+    role: "AML Surveillance & Algorithms Lead (Feature 3)",
+    roleId: "YASH_BHARAMBE",
+    email: "yash.bharambe@nicebank.com",
+    avatar: "YB",
+    badgeColor: "#818cf8",
+    description: "Levenshtein dynamic matrix, Soundex phonetic encoding, and risk tier evaluation."
+  },
+  {
+    name: "Divyani Katre",
+    role: "Adjudication & Audit Director (Feature 4)",
+    roleId: "DIVYANI_KATRE",
+    email: "divyani.katre@nicebank.com",
+    avatar: "DK",
+    badgeColor: "#f59e0b",
+    description: "Compliance decisioning queues, regulatory reason codes, and immutable audit logs."
+  },
+  {
+    name: "Anurag Pathak",
+    role: "Sanctions Intelligence & SAR Lead (Feature 5)",
+    roleId: "ANURAG_PATHAK",
+    email: "anurag.pathak@nicebank.com",
+    avatar: "AP",
+    badgeColor: "#f43f5e",
+    description: "Continuous sanctions monitoring, retroactive customer sweeps, and SAR generation."
   }
 ];
 

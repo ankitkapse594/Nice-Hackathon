@@ -121,11 +121,11 @@ export default function SettingsModal({ isOpen, onClose, onResetData }) {
             </h3>
 
             <div style={{ fontSize: "0.775rem", color: "var(--text-muted)", display: "flex", flexDirection: "column", gap: 6 }}>
-              <div><strong>Feature 1 (Member 1):</strong> Customer Intake modal & 100-record applicant table with filtering.</div>
-              <div><strong>Feature 2 (Member 2):</strong> Side-by-side ID registry comparison & regex ID format validator.</div>
-              <div><strong>Feature 3 (Member 3):</strong> Fuzzy Watchlist matching (Levenshtein + Soundex) & multi-factor risk scoring.</div>
-              <div><strong>Feature 4 (Member 4):</strong> Compliance officer decision queue & tamper-evident audit logs.</div>
-              <div><strong>Feature 5 (Member 5 - Killer Feature):</strong> Continuous Watchlist Monitoring, Retroactive Rescreening & 1-Click SAR generator.</div>
+              <div><strong>Feature 1 — Ankit Kapse:</strong> Customer Intake modal & 100-record applicant table with filtering.</div>
+              <div><strong>Feature 2 — Shruti Khadatkar:</strong> Side-by-side ID registry comparison & regex ID format validator.</div>
+              <div><strong>Feature 3 — Yash Bharambe:</strong> Fuzzy Watchlist matching (Levenshtein + Soundex) & multi-factor risk scoring.</div>
+              <div><strong>Feature 4 — Divyani Katre:</strong> Compliance officer decision queue & tamper-evident audit logs.</div>
+              <div><strong>Feature 5 — Anurag Pathak (Killer Feature):</strong> Continuous Watchlist Monitoring, Retroactive Rescreening & 1-Click SAR generator.</div>
             </div>
           </div>
 

@@ -430,8 +430,8 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
               <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(99, 102, 241, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Terminal size={22} color="#818cf8" />
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#818cf8", background: "rgba(99, 102, 241, 0.1)", padding: "3px 8px", borderRadius: 4 }}>
-                Member 1
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#818cf8", background: "rgba(99, 102, 241, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(99, 102, 241, 0.25)" }}>
+                Ankit Kapse • Feature 1
               </span>
             </div>
             <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>1. Onboarding Intake & Records</h3>
@@ -446,8 +446,8 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
               <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(245, 158, 11, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <FileCheck2 size={22} color="#fbbf24" />
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fbbf24", background: "rgba(245, 158, 11, 0.1)", padding: "3px 8px", borderRadius: 4 }}>
-                Member 2
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fbbf24", background: "rgba(245, 158, 11, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(245, 158, 11, 0.25)" }}>
+                Shruti Khadatkar • Feature 2
               </span>
             </div>
             <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>2. ID Consistency Checks</h3>
@@ -462,8 +462,8 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
               <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Search size={22} color="#38bdf8" />
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#38bdf8", background: "rgba(56, 189, 248, 0.1)", padding: "3px 8px", borderRadius: 4 }}>
-                Member 3
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#38bdf8", background: "rgba(56, 189, 248, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(56, 189, 248, 0.25)" }}>
+                Yash Bharambe • Feature 3
               </span>
             </div>
             <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>3. Watchlist Screening & Risk Rating</h3>
@@ -478,8 +478,8 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
               <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(16, 185, 129, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <History size={22} color="#10b981" />
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#10b981", background: "rgba(16, 185, 129, 0.1)", padding: "3px 8px", borderRadius: 4 }}>
-                Member 4
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#10b981", background: "rgba(16, 185, 129, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(16, 185, 129, 0.25)" }}>
+                Divyani Katre • Feature 4
               </span>
             </div>
             <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>4. Compliance Dashboard & Audit Trail</h3>
@@ -494,16 +494,48 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
               <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(244, 63, 94, 0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <AlertOctagon size={22} color="#f43f5e" />
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fb7185", background: "rgba(244, 63, 94, 0.15)", padding: "3px 8px", borderRadius: 4 }}>
-                Member 5 (Killer Innovation)
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fb7185", background: "rgba(244, 63, 94, 0.15)", padding: "4px 12px", borderRadius: 6, border: "1px solid rgba(244, 63, 94, 0.3)" }}>
+                Anurag Pathak • Feature 5 Lead (Killer Innovation)
               </span>
             </div>
             <h3 style={{ fontSize: "1.2rem", color: "#fff", marginBottom: 6 }}>
               5. Continuous Sanctions Monitoring & 1-Click SAR Generator
             </h3>
             <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", lineHeight: 1.6, maxWidth: 900 }}>
-              Directly answers the hackathon prompt: <em>"What should happen to existing customers when a new name is added to the watchlist?"</em> When a new entity is designated, the engine automatically runs a retroactive batch scan across historical approved customers, freezes matching accounts, and synthesizes a formal FinCEN-compliant Suspicious Activity Report (SAR-101).
+              Directly answers the hackathon prompt: <em>"What should happen to existing customers when a new name is added to the watchlist?"</em> When a new entity is designated, Anurag's engine automatically runs a retroactive batch scan across historical approved customers, freezes matching accounts, and synthesizes a formal FinCEN-compliant Suspicious Activity Report (SAR-101).
             </p>
+          </div>
+        </div>
+
+        {/* Minimalist Team Roster Bar for Judges */}
+        <div style={{
+          marginTop: 30,
+          padding: "18px 24px",
+          background: "rgba(15, 23, 42, 0.65)",
+          border: "1px solid var(--border-subtle)",
+          borderRadius: 12,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 16
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              Project Engineering Team:
+            </span>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", fontSize: "0.825rem" }}>
+            <span style={{ color: "#f8fafc" }}><strong>1.</strong> Ankit Kapse</span>
+            <span style={{ color: "var(--text-dim)" }}>•</span>
+            <span style={{ color: "#f8fafc" }}><strong>2.</strong> Shruti Khadatkar</span>
+            <span style={{ color: "var(--text-dim)" }}>•</span>
+            <span style={{ color: "#f8fafc" }}><strong>3.</strong> Yash Bharambe</span>
+            <span style={{ color: "var(--text-dim)" }}>•</span>
+            <span style={{ color: "#f8fafc" }}><strong>4.</strong> Divyani Katre</span>
+            <span style={{ color: "var(--text-dim)" }}>•</span>
+            <span style={{ color: "#f8fafc" }}><strong>5.</strong> Anurag Pathak</span>
           </div>
         </div>
       </section>

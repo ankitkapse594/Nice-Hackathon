@@ -9,45 +9,45 @@ export default function PitchGuideModal({ isOpen, onClose }) {
   const pitchMinutes = [
     {
       minute: "0:00 - 1:00",
-      speaker: "Team Lead / Member 1",
+      speaker: "Ankit Kapse (Team Lead)",
       topic: "The Hook & The $2.5B Business Problem",
       screenAction: "Show Landing Page Hero & ROI Calculator",
-      script: "Good morning judges! Banks spend over $2.5 Billion annually on manual KYC compliance, with customers waiting 48 hours to open an account. Today, our team built an Autonomous KYC & AML Sanctions Portal that reduces onboarding to under 30 seconds with zero sanctions leakage. We divided our system across 5 core features, each owned by one team member."
+      script: "Good morning judges! I am Ankit Kapse, representing our team alongside Shruti, Yash, Divyani, and Anurag. Banks spend over $2.5 Billion annually on manual KYC compliance, with customers waiting 48 hours to open an account. Today, we present an Autonomous KYC & AML Sanctions Portal that reduces onboarding to under 30 seconds with zero sanctions leakage. We divided our system across 5 core features, each owned by one of us."
     },
     {
       minute: "1:00 - 2:00",
-      speaker: "Member 1",
+      speaker: "Ankit Kapse",
       topic: "Feature 1: Customer Intake & Synthetic Registry",
       screenAction: "Open Intake Modal, show 100-applicant directory table, search & filter",
       script: "I own Feature 1: The intake engine. It captures customer demographics, income, and national ID with real-time format validation. We engineered a synthetic dataset of 100 realistic applicants across 12 countries. The directory provides compliance officers with high-density search, status filters, and instant CSV export."
     },
     {
       minute: "2:00 - 3:00",
-      speaker: "Member 2",
+      speaker: "Shruti Khadatkar",
       topic: "Feature 2: Automated ID Consistency Matrix",
       screenAction: "Click 'Check ID' on Sanya Mehra (APP-1003) to show side-by-side mismatch",
-      script: "I own Feature 2: Automated Consistency Checks. In the real world, bad actors tamper with dates or use fake IDs. My engine cross-references the form data against the government registry (id_records). Notice how it instantly highlights Sanya's DOB mismatch in red and validates regex format for Passports and National IDs, computing an objective Consistency Score."
+      script: "I am Shruti Khadatkar, and I own Feature 2: Automated Consistency Checks. In the real world, bad actors tamper with dates or use fake IDs. My engine cross-references the form data against the government registry (id_records). Notice how it instantly highlights Sanya's DOB mismatch in red and validates regex format for Passports and National IDs, computing an objective Consistency Score."
     },
     {
       minute: "3:00 - 4:00",
-      speaker: "Member 3",
+      speaker: "Yash Bharambe",
       topic: "Feature 3: Fuzzy Watchlist Matching & Risk Rating",
       screenAction: "Click 'Watchlist' on Rajesh Kumar (APP-1001) to show 95% near-match with Rajesh Kumarr",
-      script: "I own Feature 3: Watchlist Screening. Bad actors disguise themselves with minor spelling variations. We implemented a custom Levenshtein distance matrix and American Soundex algorithm. When screening 'Rajesh Kumar', it catches a 95% similarity match to OFAC-sanctioned 'Rajesh Kumarr', and automatically rates him High Risk with clear, explainable reasons."
+      script: "I am Yash Bharambe, and I own Feature 3: Watchlist Screening. Bad actors disguise themselves with minor spelling variations. We implemented a custom Levenshtein distance matrix and American Soundex algorithm. When screening 'Rajesh Kumar', it catches a 95% similarity match to OFAC-sanctioned 'Rajesh Kumarr', and automatically rates him High Risk with clear, explainable reasons."
     },
     {
       minute: "4:00 - 5:00",
-      speaker: "Member 4",
+      speaker: "Divyani Katre",
       topic: "Feature 4: Compliance Adjudication & Audit Trail",
       screenAction: "Open Compliance Adjudication tab, approve an applicant, view Audit Trail tab",
-      script: "I own Feature 4: Adjudication and the Immutable Audit Trail. Compliance officers can review pending cases by risk tier. When an officer approves or rejects, our system mandates a regulatory reason code and timestamp. In the Audit Trail tab, every single decision is immutably logged for supervisory inspections."
+      script: "I am Divyani Katre, and I own Feature 4: Adjudication and the Immutable Audit Trail. Compliance officers can review pending cases by risk tier. When an officer approves or rejects, our system mandates a regulatory reason code and timestamp. In the Audit Trail tab, every single decision is immutably logged for supervisory inspections."
     },
     {
       minute: "5:00 - 6:00",
-      speaker: "Member 5",
+      speaker: "Anurag Pathak",
       topic: "Feature 5: Killer Feature (Continuous Rescreening & SAR)",
       screenAction: "Click 'Add Sanction & Rescreen', preset Nikolai Sokolov, run batch scan, click 1-Click SAR",
-      script: "I own Feature 5, answering the hackathon question: 'What happens to existing customers when a new sanction is issued?' Watch this: I ingest a new sanction 'Nikolai Sokolov'. Our engine sweeps all historical approved customers in milliseconds, flags matching account APP-1006, immediately freezes the account, and with 1 click generates an official FinCEN-compliant Suspicious Activity Report (SAR-101) with legal narrative and digital sign-off!"
+      script: "I am Anurag Pathak, and I own Feature 5, answering the hackathon question: 'What happens to existing customers when a new sanction is issued?' Watch this: I ingest a new sanction 'Nikolai Sokolov'. Our engine sweeps all historical approved customers in milliseconds, flags matching account APP-1006, immediately freezes the account, and with 1 click generates an official FinCEN-compliant Suspicious Activity Report (SAR-101) with legal narrative and digital sign-off!"
     }
   ];
 

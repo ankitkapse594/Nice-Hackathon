@@ -5,12 +5,13 @@ export const TEAM_CODE_MODULES = [
   {
     featureNumber: 1,
     title: "Customer Onboarding Intake & Registry",
-    owner: "Team Member 1",
+    owner: "Ankit Kapse",
+    roleTitle: "Feature 1 Lead • Ingestion Architect",
     file: "src/components/ApplicantModal.jsx & storageService.js",
     functionName: "addApplicant(formData, idData)",
     timeComplexity: "O(1) insertion, O(M) regex validation",
     concept: "State validation, sanitization & data normalization",
-    pitchExplanation: "I built the customer intake engine. It captures customer demographics and financial profile, validates required fields, and sanitizes strings. It runs real-time regex ID format checks and normalizes data before committing to the reactive storage store.",
+    pitchExplanation: "I am Ankit Kapse. I built the customer intake engine. It captures customer demographics and financial profiles, validates required fields, and sanitizes strings. It runs real-time regex ID format checks and normalizes data before committing to the reactive storage store.",
     codeSnippet: `// Feature 1: Applicant Intake & Registry Ingestion
 export const addApplicant = (formData, idData = null) => {
   const applicantId = \`APP-\${1000 + applicants.length + 1}\`;
@@ -32,12 +33,13 @@ export const addApplicant = (formData, idData = null) => {
   {
     featureNumber: 2,
     title: "Automated ID & Form Consistency Matrix",
-    owner: "Team Member 2",
+    owner: "Shruti Khadatkar",
+    roleTitle: "Feature 2 Lead • Verification Engineer",
     file: "src/services/matchingEngine.js",
     functionName: "runConsistencyCheck(applicant, idRecord)",
     timeComplexity: "O(L) string distance & regex pattern matching",
     concept: "Cross-referencing declared form data against trusted official registries",
-    pitchExplanation: "I built the consistency engine. It compares what the applicant submitted on the form against the government ID registry. It checks for exact DOB matches, calculates address similarity, validates document formats using regex, and outputs an objective Consistency Score (0-100%).",
+    pitchExplanation: "I am Shruti Khadatkar. I built the consistency engine. It compares what the applicant submitted on the form against the government ID registry. It checks for exact DOB matches, calculates address similarity, validates document formats using regex, and outputs an objective Consistency Score (0-100%).",
     codeSnippet: `// Feature 2: Consistency Check Engine
 export function runConsistencyCheck(applicant, idRecord) {
   const discrepancies = [];
@@ -58,12 +60,13 @@ export function runConsistencyCheck(applicant, idRecord) {
   {
     featureNumber: 3,
     title: "Fuzzy Watchlist Screening & Multi-Factor Risk",
-    owner: "Team Member 3",
+    owner: "Yash Bharambe",
+    roleTitle: "Feature 3 Lead • Algorithms Specialist",
     file: "src/services/matchingEngine.js",
     functionName: "screenAgainstWatchlist() & levenshteinDistance()",
     timeComplexity: "O(N * M) dynamic programming matrix + O(K) Soundex encoding",
     concept: "Fuzzy string matching & phonetic hashing to detect evasive aliases",
-    pitchExplanation: "I implemented our fuzzy screening algorithm. Criminals often disguise their names with deliberate typos (like 'Rajesh Kumar' vs 'Rajesh Kumarr'). We compute the Levenshtein distance matrix and normalized similarity score, plus American Soundex phonetic encoding, categorizing customers into Low, Medium, or High risk with transparent reasons.",
+    pitchExplanation: "I am Yash Bharambe. I implemented our fuzzy screening algorithm. Criminals often disguise their names with deliberate typos (like 'Rajesh Kumar' vs 'Rajesh Kumarr'). We compute the Levenshtein distance matrix and normalized similarity score, plus American Soundex phonetic encoding, categorizing customers into Low, Medium, or High risk with transparent reasons.",
     codeSnippet: `// Feature 3: Levenshtein Distance & Fuzzy Matrix
 export function levenshteinDistance(s1 = "", s2 = "") {
   const a = s1.toLowerCase().trim();
@@ -85,12 +88,13 @@ export function levenshteinDistance(s1 = "", s2 = "") {
   {
     featureNumber: 4,
     title: "Compliance Adjudication Center & Audit Trail",
-    owner: "Team Member 4",
+    owner: "Divyani Katre",
+    roleTitle: "Feature 4 Lead • Compliance Systems Architect",
     file: "src/components/ComplianceDashboard.jsx & storageService.js",
     functionName: "updateApplicantDecision() & addAuditLog()",
     timeComplexity: "O(1) state transition & sequential append logging",
     concept: "State machine transitions, regulatory reason code mandates & immutable logging",
-    pitchExplanation: "I developed the compliance adjudication workflow and immutable audit log. Bank officers can triage pending applications by risk tier, select regulatory reason codes (e.g. SANCTION_WATCHLIST_MATCH), and log every decision with immutable timestamps so that external regulators can verify the audit trail.",
+    pitchExplanation: "I am Divyani Katre. I developed the compliance adjudication workflow and immutable audit log. Bank officers can triage pending applications by risk tier, select regulatory reason codes (e.g. SANCTION_WATCHLIST_MATCH), and log every decision with immutable timestamps so that external regulators can verify the audit trail.",
     codeSnippet: `// Feature 4: Adjudication & Immutable Audit Log
 export const updateApplicantDecision = (applicantId, status, officerName, reasonCode, notes) => {
   const applicant = applicants.find(a => a.applicant_id === applicantId);
@@ -110,12 +114,13 @@ export const updateApplicantDecision = (applicantId, status, officerName, reason
   {
     featureNumber: 5,
     title: "Continuous Sanctions Monitoring & 1-Click SAR",
-    owner: "Team Member 5",
+    owner: "Anurag Pathak",
+    roleTitle: "Feature 5 Lead • Surveillance Innovation Lead",
     file: "src/services/storageService.js & sarService.js",
     functionName: "addWatchlistEntityAndRescreen() & generateSarReport()",
     timeComplexity: "O(C * W) batch sweeping where C = customers, W = sanctions",
     concept: "Continuous surveillance, retroactive scanning & automated regulatory narrative synthesis",
-    pitchExplanation: "I designed our killer feature answering the hackathon question: 'What happens to existing customers when a new sanction is published?' When an officer ingests a new sanction, my engine sweeps our historical approved customer base, automatically freezes matching accounts, and synthesizes a formal FinCEN-compliant Suspicious Activity Report (SAR-101) with legal narratives.",
+    pitchExplanation: "I am Anurag Pathak. I designed our killer feature answering the hackathon question: 'What happens to existing customers when a new sanction is published?' When an officer ingests a new sanction, my engine sweeps our historical approved customer base, automatically freezes matching accounts, and synthesizes a formal FinCEN-compliant Suspicious Activity Report (SAR-101) with legal narratives.",
     codeSnippet: `// Feature 5: Retroactive Rescreening & Account Freezing
 export const addWatchlistEntityAndRescreen = (newEntity) => {
   watchlist.unshift(newEntity);

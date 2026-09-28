@@ -27,11 +27,11 @@ Open your browser at **`http://localhost:5173`**.
 
 | # | Feature Name | Team Member | Description & Key Innovations |
 | :--- | :--- | :--- | :--- |
-| **1** | **Onboarding Intake & Records** | **Team Member 1** | Dynamic customer application modal (DOB, occupation, income, address) with input validation, plus filterable 100-applicant directory table with CSV export. |
-| **2** | **Consistency Checks** | **Team Member 2** | Real-time cross-referencing between customer form and government registry (`id_records`). Regex ID format validator (Passport, National ID, DL) + visual side-by-side mismatch highlighter. |
-| **3** | **Watchlist Screening & Risk Rating** | **Team Member 3** | Dual-tier **Fuzzy Matching Engine** (Levenshtein Distance + Phonetic Soundex) catching spelling variations (*Rajesh Kumar* vs *Rajesh Kumarr*). Multi-factor Low/Med/High risk rating with explainable risk breakdown. |
-| **4** | **Compliance Dashboard & Audit Trail** | **Team Member 4** | Tabbed adjudication queue (`Pending`, `Under Review`, `Approved`, `Flagged/Rejected`) with mandatory reason codes, officer notes, and an **immutable chronological audit log**. |
-| **5** | **Continuous Watchlist Monitoring & SAR Generator** *(Team's Own Feature)* | **Team Member 5** | Solves the hackathon question: *"What happens to existing customers when a new name is added to the watchlist?"* Automatically triggers a batch retroactive scan across all existing accounts upon new sanction ingestion, freezes matching accounts, and generates an official 1-click **Suspicious Activity Report (SAR-101)**. |
+| **1** | **Onboarding Intake & Records** | **Ankit Kapse** | Dynamic customer application modal (DOB, occupation, income, address) with input validation, plus filterable 100-applicant directory table with CSV export. |
+| **2** | **Consistency Checks** | **Shruti Khadatkar** | Real-time cross-referencing between customer form and government registry (`id_records`). Regex ID format validator (Passport, National ID, DL) + visual side-by-side mismatch highlighter. |
+| **3** | **Watchlist Screening & Risk Rating** | **Yash Bharambe** | Dual-tier **Fuzzy Matching Engine** (Levenshtein Distance + Phonetic Soundex) catching spelling variations (*Rajesh Kumar* vs *Rajesh Kumarr*). Multi-factor Low/Med/High risk rating with explainable risk breakdown. |
+| **4** | **Compliance Dashboard & Audit Trail** | **Divyani Katre** | Tabbed adjudication queue (`Pending`, `Under Review`, `Approved`, `Flagged/Rejected`) with mandatory reason codes, officer notes, and an **immutable chronological audit log**. |
+| **5** | **Continuous Watchlist Monitoring & SAR Generator** *(Team's Own Feature)* | **Anurag Pathak** | Solves the hackathon question: *"What happens to existing customers when a new name is added to the watchlist?"* Automatically triggers a batch retroactive scan across all existing accounts upon new sanction ingestion, freezes matching accounts, and generates an official 1-click **Suspicious Activity Report (SAR-101)**. |
 
 ---
 
