@@ -10,6 +10,9 @@ import WatchlistScreeningModal from "./components/WatchlistScreeningModal";
 import RetroactiveRescreenModal from "./components/RetroactiveRescreenModal";
 import SARReportModal from "./components/SARReportModal";
 import SettingsModal from "./components/SettingsModal";
+import BusinessRoiModal from "./components/BusinessRoiModal";
+import CodeExplainerModal from "./components/CodeExplainerModal";
+import PitchGuideModal from "./components/PitchGuideModal";
 
 import { 
   initializeStorage, 
@@ -59,6 +62,9 @@ export default function App() {
   const [isApplicantModalOpen, setIsApplicantModalOpen] = useState(false);
   const [isRescreenModalOpen, setIsRescreenModalOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isRoiModalOpen, setIsRoiModalOpen] = useState(false);
+  const [isCodeExplainerOpen, setIsCodeExplainerOpen] = useState(false);
+  const [isPitchGuideOpen, setIsPitchGuideOpen] = useState(false);
 
   // Inspector Modals
   const [selectedApplicantForConsistency, setSelectedApplicantForConsistency] = useState(null);
@@ -125,11 +131,21 @@ export default function App() {
         <LandingPage
           onOpenLogin={() => setIsLoginModalOpen(true)}
           onEnterDemo={() => handleLoginSuccess(DEMO_USERS[0])}
+          onOpenRoi={() => setIsRoiModalOpen(true)}
+          onOpenPitchGuide={() => setIsPitchGuideOpen(true)}
         />
         <LoginModal
           isOpen={isLoginModalOpen}
           onClose={() => setIsLoginModalOpen(false)}
           onLoginSuccess={handleLoginSuccess}
+        />
+        <BusinessRoiModal
+          isOpen={isRoiModalOpen}
+          onClose={() => setIsRoiModalOpen(false)}
+        />
+        <PitchGuideModal
+          isOpen={isPitchGuideOpen}
+          onClose={() => setIsPitchGuideOpen(false)}
         />
       </>
     );
@@ -144,6 +160,9 @@ export default function App() {
         onOpenNewApplicant={() => setIsApplicantModalOpen(true)}
         onOpenRescreen={() => setIsRescreenModalOpen(true)}
         onOpenSettings={() => setIsSettingsOpen(true)}
+        onOpenRoi={() => setIsRoiModalOpen(true)}
+        onOpenCodeExplainer={() => setIsCodeExplainerOpen(true)}
+        onOpenPitchGuide={() => setIsPitchGuideOpen(true)}
         onRunStp={() => runStpBatchApproval(currentUser?.name || "Lead Compliance Officer")}
         onResetData={resetToInitialData}
         stpCount={eligibleStpCount}
@@ -433,6 +452,21 @@ export default function App() {
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
         onResetData={resetToInitialData}
+      />
+
+      <BusinessRoiModal
+        isOpen={isRoiModalOpen}
+        onClose={() => setIsRoiModalOpen(false)}
+      />
+
+      <CodeExplainerModal
+        isOpen={isCodeExplainerOpen}
+        onClose={() => setIsCodeExplainerOpen(false)}
+      />
+
+      <PitchGuideModal
+        isOpen={isPitchGuideOpen}
+        onClose={() => setIsPitchGuideOpen(false)}
       />
     </div>
   );

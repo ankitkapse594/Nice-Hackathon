@@ -7,7 +7,10 @@ import {
   RotateCcw, 
   Settings, 
   Database,
-  CheckCircle2
+  CheckCircle2,
+  TrendingUp,
+  Code2,
+  Mic
 } from "lucide-react";
 import { isSupabaseConfigured } from "../services/supabaseClient";
 
@@ -19,6 +22,9 @@ export default function Navbar({
   onOpenSettings, 
   onRunStp, 
   onResetData,
+  onOpenRoi,
+  onOpenCodeExplainer,
+  onOpenPitchGuide,
   stpCount = 0 
 }) {
   const [stpLoading, setStpLoading] = useState(false);
@@ -183,6 +189,39 @@ export default function Navbar({
           >
             <UserPlus size={16} />
             <span>+ New Applicant</span>
+          </button>
+
+          {/* Executive Business ROI */}
+          <button 
+            className="btn btn-secondary"
+            onClick={onOpenRoi}
+            title="Open Executive Business Value & ROI Model"
+            style={{ color: "#34d399", borderColor: "rgba(16, 185, 129, 0.3)" }}
+          >
+            <TrendingUp size={15} color="#34d399" />
+            <span>ROI Model</span>
+          </button>
+
+          {/* Judges' Code Inspector */}
+          <button 
+            className="btn btn-secondary"
+            onClick={onOpenCodeExplainer}
+            title="Team Code & Architecture Inspector for Individual Scoring"
+            style={{ color: "#a5b4fc", borderColor: "rgba(99, 102, 241, 0.3)" }}
+          >
+            <Code2 size={15} color="#818cf8" />
+            <span>Code & Arch</span>
+          </button>
+
+          {/* 6-Min Pitch Script */}
+          <button 
+            className="btn btn-secondary"
+            onClick={onOpenPitchGuide}
+            title="10-Minute Presentation Master Guide (6-min Pitch + 4-min Q&A)"
+            style={{ color: "#fbbf24", borderColor: "rgba(245, 158, 11, 0.3)" }}
+          >
+            <Mic size={15} color="#fbbf24" />
+            <span>Pitch Guide</span>
           </button>
 
           {/* Seed Data Reset */}

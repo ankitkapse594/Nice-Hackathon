@@ -21,7 +21,7 @@ import {
 import { initialWatchlist } from "../data/syntheticData";
 import { calculateSimilarity, soundex, arePhoneticallySimilar } from "../services/matchingEngine";
 
-export default function LandingPage({ onOpenLogin, onEnterDemo }) {
+export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpenPitchGuide }) {
   // Interactive Live Sandbox state on landing page
   const [testName, setTestName] = useState("Rajesh Kumar");
   
@@ -127,6 +127,38 @@ export default function LandingPage({ onOpenLogin, onEnterDemo }) {
           <a href="#impact" style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.875rem", fontWeight: 500 }}>
             Business Value
           </a>
+
+          <button
+            onClick={onOpenRoi}
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(16, 185, 129, 0.3)",
+              color: "#34d399",
+              padding: "6px 12px",
+              borderRadius: 6,
+              fontSize: "0.85rem",
+              fontWeight: 600,
+              cursor: "pointer"
+            }}
+          >
+            ROI Model
+          </button>
+
+          <button
+            onClick={onOpenPitchGuide}
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(245, 158, 11, 0.3)",
+              color: "#fbbf24",
+              padding: "6px 12px",
+              borderRadius: 6,
+              fontSize: "0.85rem",
+              fontWeight: 600,
+              cursor: "pointer"
+            }}
+          >
+            Pitch Guide
+          </button>
 
           <button 
             className="btn btn-primary"
