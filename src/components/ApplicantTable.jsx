@@ -13,6 +13,7 @@ import {
 
 export default function ApplicantTable({ 
   applicants = [], 
+  onOpenProfile,
   onOpenConsistency, 
   onOpenWatchlist, 
   onOpenSar,
@@ -141,12 +142,25 @@ export default function ApplicantTable({
           <tbody>
             {paginated.length > 0 ? (
               paginated.map((app) => (
-                <tr key={app.applicant_id}>
-                  <td className="mono" style={{ fontSize: "0.8rem", color: "#38bdf8", fontWeight: 600 }}>
-                    {app.applicant_id}
+                <tr 
+                  key={app.applicant_id}
+                  onClick={() => onOpenProfile && onOpenProfile(app)}
+                  style={{ 
+                    cursor: "pointer", 
+                    transition: "all 0.15s ease",
+                  }}
+                  className="applicant-table-row"
+                  title="Click to view complete 360° applicant dossier & overall data"
+                >
+                  <td className="mono" style={{ fontSize: "0.8rem", color: "#38bdf8", fontWeight: 700 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <span>{app.applicant_id}</span>
+                    </div>
                   </td>
                   <td>
-                    <div style={{ fontWeight: 600, color: "#f8fafc" }}>{app.full_name}</div>
+                    <div style={{ fontWeight: 600, color: "#f8fafc", display: "flex", alignItems: "center", gap: 6 }}>
+                      <span>{app.full_name}</span>
+                    </div>
                     <div style={{ fontSize: "0.75rem", color: "var(--text-muted)", maxWidth: 200, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                       {app.address}
                     </div>
@@ -190,10 +204,27 @@ export default function ApplicantTable({
                   </td>
                   <td>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 6 }}>
+                      {/* Primary Overall Data Trigger */}
+                      <button
+                        className="btn btn-primary"
+                        style={{ padding: "4px 9px", fontSize: "0.75rem", gap: 4 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenProfile && onOpenProfile(app);
+                        }}
+                        title="Click to view overall applicant data & 360° profile"
+                      >
+                        <Eye size={13} />
+                        <span>Dossier</span>
+                      </button>
+
                       <button
                         className="btn btn-secondary"
                         style={{ padding: "4px 8px", fontSize: "0.75rem" }}
-                        onClick={() => onOpenConsistency(app)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenConsistency(app);
+                        }}
                         title="Feature 2: Compare Form with Registry ID"
                       >
                         ID Match
@@ -201,7 +232,10 @@ export default function ApplicantTable({
                       <button
                         className="btn btn-secondary"
                         style={{ padding: "4px 8px", fontSize: "0.75rem" }}
-                        onClick={() => onOpenWatchlist(app)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenWatchlist(app);
+                        }}
                         title="Feature 3: View Watchlist Fuzzy Match"
                       >
                         Watchlist
@@ -216,7 +250,10 @@ export default function ApplicantTable({
                             border: "1px solid rgba(244, 63, 94, 0.4)",
                             color: "#fda4af"
                           }}
-                          onClick={() => onOpenSar(app)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onOpenSar(app);
+                          }}
                           title="Feature 5: Generate SAR Filing"
                         >
                           SAR

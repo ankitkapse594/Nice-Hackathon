@@ -8,16 +8,18 @@ import {
   Clock, 
   ShieldCheck, 
   ArrowRight,
-  UserX
+  UserX,
+  Eye
 } from "lucide-react";
 import { updateApplicantDecision } from "../services/storageService";
 
 export default function ComplianceDashboard({ 
   applicants = [], 
+  onOpenProfile,
   onSelectApplicant, 
   onOpenConsistency, 
-  onOpenWatchlist,
-  onOpenSar
+  onOpenWatchlist, 
+  onOpenSar 
 }) {
   const [activeTab, setActiveTab] = useState("Pending"); // 'Pending', 'Approved', 'Rejected', 'Under Review'
   const [decisionModal, setDecisionModal] = useState({ isOpen: false, applicant: null });
@@ -146,13 +148,25 @@ export default function ComplianceDashboard({
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <h3 style={{ fontSize: "1.05rem", color: "#fff" }}>{app.full_name}</h3>
+                    <h3 
+                      style={{ fontSize: "1.05rem", color: "#fff", cursor: "pointer", transition: "color 0.15s ease" }}
+                      onClick={() => onOpenProfile && onOpenProfile(app)}
+                      title="Click to view complete 360° applicant dossier & overall data"
+                    >
+                      {app.full_name}
+                    </h3>
                     <span className={`badge ${app.risk_level === "High" ? "badge-high" : app.risk_level === "Medium" ? "badge-med" : "badge-low"}`}>
                       {app.risk_level} Risk ({app.risk_score || 0}%)
                     </span>
                   </div>
                   <div style={{ fontSize: "0.775rem", color: "var(--text-muted)", marginTop: 2 }}>
-                    Ref: <span className="mono" style={{ color: "#38bdf8" }}>{app.applicant_id}</span> | {app.country}
+                    Ref: <span 
+                      className="mono" 
+                      style={{ color: "#38bdf8", cursor: "pointer", fontWeight: 700 }}
+                      onClick={() => onOpenProfile && onOpenProfile(app)}
+                    >
+                      {app.applicant_id}
+                    </span> | {app.country}
                   </div>
                 </div>
 
@@ -219,6 +233,15 @@ export default function ComplianceDashboard({
                 marginTop: "auto"
               }}>
                 <div style={{ display: "flex", gap: 6 }}>
+                  <button
+                    className="btn btn-primary"
+                    style={{ padding: "5px 9px", fontSize: "0.75rem", gap: 4 }}
+                    onClick={() => onOpenProfile && onOpenProfile(app)}
+                    title="View overall applicant profile & 360° dossier"
+                  >
+                    <Eye size={13} />
+                    <span>Dossier</span>
+                  </button>
                   <button
                     className="btn btn-secondary"
                     style={{ padding: "5px 9px", fontSize: "0.75rem" }}

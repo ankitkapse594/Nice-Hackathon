@@ -294,6 +294,10 @@ h1, h2, h3, h4 {
   background: rgba(255, 255, 255, 0.025);
 }
 
+.data-table tr.applicant-table-row:hover td {
+  background: rgba(99, 102, 241, 0.08);
+}
+
 /* Utility Animations */
 .glow-cyan {
   box-shadow: var(--glow-cyan);

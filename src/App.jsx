@@ -12,6 +12,7 @@ import SARReportModal from "./components/SARReportModal";
 import SettingsModal from "./components/SettingsModal";
 import BusinessRoiModal from "./components/BusinessRoiModal";
 import CodeExplainerModal from "./components/CodeExplainerModal";
+import ApplicantProfileModal from "./components/ApplicantProfileModal";
 
 import { 
   initializeStorage, 
@@ -22,7 +23,8 @@ import {
   getAuditLogs, 
   addApplicant, 
   resetToInitialData,
-  runStpBatchApproval 
+  runStpBatchApproval,
+  updateApplicantDecision
 } from "./services/storageService";
 
 import { 
@@ -65,6 +67,7 @@ export default function App() {
   const [isCodeExplainerOpen, setIsCodeExplainerOpen] = useState(false);
 
   // Inspector Modals
+  const [selectedApplicantForProfile, setSelectedApplicantForProfile] = useState(null);
   const [selectedApplicantForConsistency, setSelectedApplicantForConsistency] = useState(null);
   const [selectedApplicantForWatchlist, setSelectedApplicantForWatchlist] = useState(null);
   const [sarModalData, setSarModalData] = useState({ isOpen: false, applicant: null, match: null });
@@ -89,6 +92,10 @@ export default function App() {
   // Handlers
   const handleCreateApplicant = (formData, idData) => {
     addApplicant(formData, idData);
+  };
+
+  const handleOpenProfile = (applicant) => {
+    setSelectedApplicantForProfile(applicant);
   };
 
   const handleOpenConsistency = (applicant) => {
@@ -298,6 +305,7 @@ export default function App() {
         {activeMainTab === "applicants" && (
           <ApplicantTable
             applicants={applicants}
+            onOpenProfile={handleOpenProfile}
             onOpenConsistency={handleOpenConsistency}
             onOpenWatchlist={handleOpenWatchlist}
             onOpenSar={(app) => handleOpenSar(app)}
@@ -308,6 +316,7 @@ export default function App() {
         {activeMainTab === "adjudication" && (
           <ComplianceDashboard
             applicants={applicants}
+            onOpenProfile={handleOpenProfile}
             onOpenConsistency={handleOpenConsistency}
             onOpenWatchlist={handleOpenWatchlist}
             onOpenSar={(app) => handleOpenSar(app)}
@@ -406,6 +415,23 @@ export default function App() {
       </footer>
 
       {/* Modals */}
+      <ApplicantProfileModal
+        isOpen={Boolean(selectedApplicantForProfile)}
+        onClose={() => setSelectedApplicantForProfile(null)}
+        applicant={selectedApplicantForProfile}
+        idRecord={selectedApplicantForProfile ? idRecords.find(r => r.applicant_id === selectedApplicantForProfile.applicant_id) : null}
+        watchlist={watchlist}
+        auditLogs={auditLogs}
+        currentUser={currentUser}
+        onUpdateDecision={(applicantId, status, officerName, reasonCode, notes) => {
+          updateApplicantDecision(applicantId, status, officerName, reasonCode, notes);
+          setSelectedApplicantForProfile(prev => prev ? { ...prev, status } : null);
+        }}
+        onOpenConsistency={handleOpenConsistency}
+        onOpenWatchlist={handleOpenWatchlist}
+        onOpenSar={(app, match) => handleOpenSar(app, match)}
+      />
+
       <ApplicantModal
         isOpen={isApplicantModalOpen}
         onClose={() => setIsApplicantModalOpen(false)}
