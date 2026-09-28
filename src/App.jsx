@@ -12,7 +12,6 @@ import SARReportModal from "./components/SARReportModal";
 import SettingsModal from "./components/SettingsModal";
 import BusinessRoiModal from "./components/BusinessRoiModal";
 import CodeExplainerModal from "./components/CodeExplainerModal";
-import PitchGuideModal from "./components/PitchGuideModal";
 
 import { 
   initializeStorage, 
@@ -64,7 +63,6 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isRoiModalOpen, setIsRoiModalOpen] = useState(false);
   const [isCodeExplainerOpen, setIsCodeExplainerOpen] = useState(false);
-  const [isPitchGuideOpen, setIsPitchGuideOpen] = useState(false);
 
   // Inspector Modals
   const [selectedApplicantForConsistency, setSelectedApplicantForConsistency] = useState(null);
@@ -132,7 +130,6 @@ export default function App() {
           onOpenLogin={() => setIsLoginModalOpen(true)}
           onEnterDemo={() => handleLoginSuccess(DEMO_USERS[0])}
           onOpenRoi={() => setIsRoiModalOpen(true)}
-          onOpenPitchGuide={() => setIsPitchGuideOpen(true)}
         />
         <LoginModal
           isOpen={isLoginModalOpen}
@@ -142,10 +139,6 @@ export default function App() {
         <BusinessRoiModal
           isOpen={isRoiModalOpen}
           onClose={() => setIsRoiModalOpen(false)}
-        />
-        <PitchGuideModal
-          isOpen={isPitchGuideOpen}
-          onClose={() => setIsPitchGuideOpen(false)}
         />
       </>
     );
@@ -162,7 +155,6 @@ export default function App() {
         onOpenSettings={() => setIsSettingsOpen(true)}
         onOpenRoi={() => setIsRoiModalOpen(true)}
         onOpenCodeExplainer={() => setIsCodeExplainerOpen(true)}
-        onOpenPitchGuide={() => setIsPitchGuideOpen(true)}
         onRunStp={() => runStpBatchApproval(currentUser?.name || "Lead Compliance Officer")}
         onResetData={resetToInitialData}
         stpCount={eligibleStpCount}
@@ -462,11 +454,6 @@ export default function App() {
       <CodeExplainerModal
         isOpen={isCodeExplainerOpen}
         onClose={() => setIsCodeExplainerOpen(false)}
-      />
-
-      <PitchGuideModal
-        isOpen={isPitchGuideOpen}
-        onClose={() => setIsPitchGuideOpen(false)}
       />
     </div>
   );

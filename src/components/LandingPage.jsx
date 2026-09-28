@@ -21,7 +21,7 @@ import {
 import { initialWatchlist } from "../data/syntheticData";
 import { calculateSimilarity, soundex, arePhoneticallySimilar } from "../services/matchingEngine";
 
-export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpenPitchGuide }) {
+export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi }) {
   // Interactive Live Sandbox state on landing page
   const [testName, setTestName] = useState("Rajesh Kumar");
   
@@ -142,22 +142,6 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
             }}
           >
             ROI Model
-          </button>
-
-          <button
-            onClick={onOpenPitchGuide}
-            style={{
-              background: "transparent",
-              border: "1px solid rgba(245, 158, 11, 0.3)",
-              color: "#fbbf24",
-              padding: "6px 12px",
-              borderRadius: 6,
-              fontSize: "0.85rem",
-              fontWeight: 600,
-              cursor: "pointer"
-            }}
-          >
-            Pitch Guide
           </button>
 
           <button 
@@ -404,138 +388,349 @@ export default function LandingPage({ onOpenLogin, onEnterDemo, onOpenRoi, onOpe
         </div>
       </section>
 
-      {/* The 5 Core Features Matrix (Team Member Ownership) */}
+      {/* The 5 Core Features (Vertical Minimalist Showcase) */}
       <section id="features" style={{
-        maxWidth: 1240,
-        margin: "0 auto 80px",
+        maxWidth: 1050,
+        margin: "0 auto 90px",
         padding: "0 24px"
       }}>
-        <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <h2 style={{ fontSize: "2rem", color: "#fff" }}>
-            Engineered for the 5-Member Team Challenge
+        <div style={{ textAlign: "center", marginBottom: 44 }}>
+          <span style={{
+            fontSize: "0.75rem",
+            fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            color: "#818cf8",
+            background: "rgba(99, 102, 241, 0.12)",
+            padding: "4px 14px",
+            borderRadius: 20,
+            border: "1px solid rgba(99, 102, 241, 0.25)"
+          }}>
+            Team Ownership Architecture
+          </span>
+          <h2 style={{ fontSize: "2.2rem", color: "#fff", marginTop: 10 }}>
+            5 Dedicated Features • 5 Engineering Leads
           </h2>
-          <p style={{ fontSize: "0.95rem", color: "var(--text-muted)", maxWidth: 640, margin: "8px auto 0" }}>
-            Every feature owned by a dedicated team member, integrated into a unified enterprise compliance architecture.
+          <p style={{ fontSize: "0.95rem", color: "var(--text-muted)", maxWidth: 650, margin: "8px auto 0" }}>
+            Every module is owned end-to-end by an individual team member, perfectly integrated into one unified banking intelligence platform.
           </p>
         </div>
 
-        <div className="perspective-container" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-          gap: 20
-        }}>
-          {/* Feature 1 */}
-          <div className="glass-panel card-3d" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(99, 102, 241, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Terminal size={22} color="#818cf8" />
+        {/* Vertical Stacked Cards */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+          {/* Member 1: Ankit Kapse */}
+          <div className="glass-panel card-3d" style={{
+            padding: "24px 28px",
+            display: "grid",
+            gridTemplateColumns: "240px 1fr",
+            gap: 24,
+            alignItems: "center",
+            background: "rgba(15, 23, 42, 0.85)",
+            border: "1px solid rgba(99, 102, 241, 0.3)"
+          }}>
+            {/* Left: Member Identity */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14, borderRight: "1px solid var(--border-subtle)", paddingRight: 16 }}>
+              <div style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #4f46e5 0%, #38bdf8 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1rem",
+                color: "#fff",
+                boxShadow: "0 0 15px rgba(79, 70, 229, 0.4)",
+                flexShrink: 0
+              }}>
+                AK
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#818cf8", background: "rgba(99, 102, 241, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(99, 102, 241, 0.25)" }}>
-                Ankit Kapse • Feature 1
-              </span>
-            </div>
-            <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>1. Onboarding Intake & Records</h3>
-            <p style={{ fontSize: "0.825rem", color: "var(--text-muted)", lineHeight: 1.5 }}>
-              Dynamic application capture (DOB, occupation, income, address) with live format validation and a searchable 100-applicant registry with CSV exports.
-            </p>
-          </div>
-
-          {/* Feature 2 */}
-          <div className="glass-panel card-3d" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(245, 158, 11, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <FileCheck2 size={22} color="#fbbf24" />
+              <div>
+                <span className="mono" style={{ fontSize: "0.7rem", color: "#818cf8", fontWeight: 700, display: "block" }}>
+                  MEMBER 01
+                </span>
+                <h3 style={{ fontSize: "1.15rem", color: "#fff", margin: 0, fontWeight: 700 }}>
+                  Ankit Kapse
+                </h3>
+                <span style={{ fontSize: "0.75rem", color: "#38bdf8", fontWeight: 600 }}>
+                  Feature 1 Lead
+                </span>
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fbbf24", background: "rgba(245, 158, 11, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(245, 158, 11, 0.25)" }}>
-                Shruti Khadatkar • Feature 2
-              </span>
             </div>
-            <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>2. ID Consistency Checks</h3>
-            <p style={{ fontSize: "0.825rem", color: "var(--text-muted)", lineHeight: 1.5 }}>
-              Cross-references form details against official government records (id_records). Highlights DOB mismatches, address deltas, and validates regex ID formats.
-            </p>
-          </div>
 
-          {/* Feature 3 */}
-          <div className="glass-panel card-3d" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Search size={22} color="#38bdf8" />
+            {/* Right: Feature Details */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                <h4 style={{ fontSize: "1.05rem", color: "#f8fafc", fontWeight: 700 }}>
+                  Customer Onboarding Intake & Synthetic Registry
+                </h4>
+                <span className="badge badge-status-approved" style={{ fontSize: "0.7rem" }}>
+                  Module Ready
+                </span>
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#38bdf8", background: "rgba(56, 189, 248, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(56, 189, 248, 0.25)" }}>
-                Yash Bharambe • Feature 3
-              </span>
-            </div>
-            <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>3. Watchlist Screening & Risk Rating</h3>
-            <p style={{ fontSize: "0.825rem", color: "var(--text-muted)", lineHeight: 1.5 }}>
-              Dual-tier fuzzy matching (Levenshtein + Soundex) against 30 global sanctions. Assigns explainable Low/Medium/High risk ratings with trigger reasons.
-            </p>
-          </div>
-
-          {/* Feature 4 */}
-          <div className="glass-panel card-3d" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(16, 185, 129, 0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <History size={22} color="#10b981" />
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.5, margin: "0 0 12px" }}>
+                Built the intake architecture with live validation for DOB, address, occupation, income, and national IDs. Engineered a pre-seeded synthetic dataset of 100 realistic applicants across 12 countries with high-density search, status filters, and instant CSV exports.
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Demographics Ingestion</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Regex ID Formatting</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>100 Synthetic Profiles</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>CSV Export Pipeline</span>
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#10b981", background: "rgba(16, 185, 129, 0.1)", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(16, 185, 129, 0.25)" }}>
-                Divyani Katre • Feature 4
-              </span>
             </div>
-            <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>4. Compliance Dashboard & Audit Trail</h3>
-            <p style={{ fontSize: "0.825rem", color: "var(--text-muted)", lineHeight: 1.5 }}>
-              Adjudication center for Pending, Approved, and Flagged accounts with mandatory reason codes and an immutable chronological audit trail log.
-            </p>
           </div>
 
-          {/* Feature 5 */}
-          <div className="glass-panel card-3d" style={{ padding: 24, gridColumn: "1 / -1", border: "1px solid rgba(244, 63, 94, 0.35)", background: "rgba(244, 63, 94, 0.04)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(244, 63, 94, 0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <AlertOctagon size={22} color="#f43f5e" />
+          {/* Member 2: Shruti Khadatkar */}
+          <div className="glass-panel card-3d" style={{
+            padding: "24px 28px",
+            display: "grid",
+            gridTemplateColumns: "240px 1fr",
+            gap: 24,
+            alignItems: "center",
+            background: "rgba(15, 23, 42, 0.85)",
+            border: "1px solid rgba(245, 158, 11, 0.3)"
+          }}>
+            {/* Left: Member Identity */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14, borderRight: "1px solid var(--border-subtle)", paddingRight: 16 }}>
+              <div style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #d97706 0%, #fbbf24 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1rem",
+                color: "#fff",
+                boxShadow: "0 0 15px rgba(245, 158, 11, 0.4)",
+                flexShrink: 0
+              }}>
+                SK
               </div>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fb7185", background: "rgba(244, 63, 94, 0.15)", padding: "4px 12px", borderRadius: 6, border: "1px solid rgba(244, 63, 94, 0.3)" }}>
-                Anurag Pathak • Feature 5 Lead (Killer Innovation)
-              </span>
+              <div>
+                <span className="mono" style={{ fontSize: "0.7rem", color: "#fbbf24", fontWeight: 700, display: "block" }}>
+                  MEMBER 02
+                </span>
+                <h3 style={{ fontSize: "1.15rem", color: "#fff", margin: 0, fontWeight: 700 }}>
+                  Shruti Khadatkar
+                </h3>
+                <span style={{ fontSize: "0.75rem", color: "#fbbf24", fontWeight: 600 }}>
+                  Feature 2 Lead
+                </span>
+              </div>
             </div>
-            <h3 style={{ fontSize: "1.2rem", color: "#fff", marginBottom: 6 }}>
-              5. Continuous Sanctions Monitoring & 1-Click SAR Generator
-            </h3>
-            <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", lineHeight: 1.6, maxWidth: 900 }}>
-              Directly answers the hackathon prompt: <em>"What should happen to existing customers when a new name is added to the watchlist?"</em> When a new entity is designated, Anurag's engine automatically runs a retroactive batch scan across historical approved customers, freezes matching accounts, and synthesizes a formal FinCEN-compliant Suspicious Activity Report (SAR-101).
-            </p>
-          </div>
-        </div>
 
-        {/* Minimalist Team Roster Bar for Judges */}
-        <div style={{
-          marginTop: 30,
-          padding: "18px 24px",
-          background: "rgba(15, 23, 42, 0.65)",
-          border: "1px solid var(--border-subtle)",
-          borderRadius: 12,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: 16
-        }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              Project Engineering Team:
-            </span>
+            {/* Right: Feature Details */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                <h4 style={{ fontSize: "1.05rem", color: "#f8fafc", fontWeight: 700 }}>
+                  Automated ID & Form Consistency Matrix
+                </h4>
+                <span className="badge badge-med" style={{ fontSize: "0.7rem" }}>
+                  Verified
+                </span>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.5, margin: "0 0 12px" }}>
+                Engineered the real-time cross-referencing engine comparing submitted customer forms against government records (id_records). Automatically detects DOB month/day inversions, computes address similarity variance, validates regex formats, and generates an objective Consistency Score.
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Government Registry Match</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>DOB Inversion Detection</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Side-by-Side Diff Matrix</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Consistency Scoring (0-100%)</span>
+              </div>
+            </div>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", fontSize: "0.825rem" }}>
-            <span style={{ color: "#f8fafc" }}><strong>1.</strong> Ankit Kapse</span>
-            <span style={{ color: "var(--text-dim)" }}>•</span>
-            <span style={{ color: "#f8fafc" }}><strong>2.</strong> Shruti Khadatkar</span>
-            <span style={{ color: "var(--text-dim)" }}>•</span>
-            <span style={{ color: "#f8fafc" }}><strong>3.</strong> Yash Bharambe</span>
-            <span style={{ color: "var(--text-dim)" }}>•</span>
-            <span style={{ color: "#f8fafc" }}><strong>4.</strong> Divyani Katre</span>
-            <span style={{ color: "var(--text-dim)" }}>•</span>
-            <span style={{ color: "#f8fafc" }}><strong>5.</strong> Anurag Pathak</span>
+          {/* Member 3: Yash Bharambe */}
+          <div className="glass-panel card-3d" style={{
+            padding: "24px 28px",
+            display: "grid",
+            gridTemplateColumns: "240px 1fr",
+            gap: 24,
+            alignItems: "center",
+            background: "rgba(15, 23, 42, 0.85)",
+            border: "1px solid rgba(56, 189, 248, 0.3)"
+          }}>
+            {/* Left: Member Identity */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14, borderRight: "1px solid var(--border-subtle)", paddingRight: 16 }}>
+              <div style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1rem",
+                color: "#fff",
+                boxShadow: "0 0 15px rgba(56, 189, 248, 0.4)",
+                flexShrink: 0
+              }}>
+                YB
+              </div>
+              <div>
+                <span className="mono" style={{ fontSize: "0.7rem", color: "#38bdf8", fontWeight: 700, display: "block" }}>
+                  MEMBER 03
+                </span>
+                <h3 style={{ fontSize: "1.15rem", color: "#fff", margin: 0, fontWeight: 700 }}>
+                  Yash Bharambe
+                </h3>
+                <span style={{ fontSize: "0.75rem", color: "#38bdf8", fontWeight: 600 }}>
+                  Feature 3 Lead
+                </span>
+              </div>
+            </div>
+
+            {/* Right: Feature Details */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                <h4 style={{ fontSize: "1.05rem", color: "#f8fafc", fontWeight: 700 }}>
+                  Fuzzy Watchlist Screening & Multi-Factor Risk Engine
+                </h4>
+                <span className="badge badge-low" style={{ fontSize: "0.7rem" }}>
+                  Algorithmic Core
+                </span>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.5, margin: "0 0 12px" }}>
+                Implemented the dual-tier algorithmic matching engine combining Levenshtein distance dynamic programming with American Soundex phonetic encoding. Unmasks evasive typos (e.g. <em>Rajesh Kumar</em> vs <em>Rajesh Kumarr</em> at 95% similarity) and computes transparent Low/Medium/High risk ratings with trigger reasons.
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Levenshtein Distance Matrix</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>American Soundex Phonetics</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>30 Global Sanctions Monitored</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Explainable Risk Breakdown</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Member 4: Divyani Katre */}
+          <div className="glass-panel card-3d" style={{
+            padding: "24px 28px",
+            display: "grid",
+            gridTemplateColumns: "240px 1fr",
+            gap: 24,
+            alignItems: "center",
+            background: "rgba(15, 23, 42, 0.85)",
+            border: "1px solid rgba(16, 185, 129, 0.3)"
+          }}>
+            {/* Left: Member Identity */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14, borderRight: "1px solid var(--border-subtle)", paddingRight: 16 }}>
+              <div style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #059669 0%, #10b981 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1rem",
+                color: "#fff",
+                boxShadow: "0 0 15px rgba(16, 185, 129, 0.4)",
+                flexShrink: 0
+              }}>
+                DK
+              </div>
+              <div>
+                <span className="mono" style={{ fontSize: "0.7rem", color: "#10b981", fontWeight: 700, display: "block" }}>
+                  MEMBER 04
+                </span>
+                <h3 style={{ fontSize: "1.15rem", color: "#fff", margin: 0, fontWeight: 700 }}>
+                  Divyani Katre
+                </h3>
+                <span style={{ fontSize: "0.75rem", color: "#10b981", fontWeight: 600 }}>
+                  Feature 4 Lead
+                </span>
+              </div>
+            </div>
+
+            {/* Right: Feature Details */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                <h4 style={{ fontSize: "1.05rem", color: "#f8fafc", fontWeight: 700 }}>
+                  Compliance Dashboard & Immutable Audit Trail
+                </h4>
+                <span className="badge badge-status-approved" style={{ fontSize: "0.7rem" }}>
+                  Regulatory Grade
+                </span>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.5, margin: "0 0 12px" }}>
+                Built the compliance adjudication center with dedicated queues for Pending, Approved, and Flagged accounts. Mandates officer sign-off with regulatory reason codes, maintaining a tamper-evident, chronological audit log capturing who decided what, when, and why for supervisory audits.
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Adjudication Queue Triage</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Regulatory Reason Code Mandate</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Immutable Audit Trail</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#cbd5e1" }}>Audit Export Pipeline</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Member 5: Anurag Pathak */}
+          <div className="glass-panel card-3d" style={{
+            padding: "24px 28px",
+            display: "grid",
+            gridTemplateColumns: "240px 1fr",
+            gap: 24,
+            alignItems: "center",
+            background: "linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%)",
+            border: "1px solid rgba(244, 63, 94, 0.45)"
+          }}>
+            {/* Left: Member Identity */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14, borderRight: "1px solid var(--border-subtle)", paddingRight: 16 }}>
+              <div style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #e11d48 0%, #f43f5e 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1rem",
+                color: "#fff",
+                boxShadow: "0 0 15px rgba(244, 63, 94, 0.5)",
+                flexShrink: 0
+              }}>
+                AP
+              </div>
+              <div>
+                <span className="mono" style={{ fontSize: "0.7rem", color: "#fb7185", fontWeight: 700, display: "block" }}>
+                  MEMBER 05 • KILLER INNOVATION
+                </span>
+                <h3 style={{ fontSize: "1.15rem", color: "#fff", margin: 0, fontWeight: 700 }}>
+                  Anurag Pathak
+                </h3>
+                <span style={{ fontSize: "0.75rem", color: "#fda4af", fontWeight: 600 }}>
+                  Feature 5 Lead
+                </span>
+              </div>
+            </div>
+
+            {/* Right: Feature Details */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                <h4 style={{ fontSize: "1.05rem", color: "#f8fafc", fontWeight: 700 }}>
+                  Continuous Sanctions Monitoring & 1-Click SAR Generator
+                </h4>
+                <span className="badge badge-high" style={{ fontSize: "0.7rem" }}>
+                  Hackathon Differentiator
+                </span>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.5, margin: "0 0 12px" }}>
+                Solves the hackathon's core challenge question: <em>"What happens to existing customers when a new name is added to the watchlist?"</em> When a new sanction is issued, Anurag's engine retroactively sweeps all historical approved customers in milliseconds, immediately freezes matching accounts, and synthesizes a formal FinCEN-compliant Suspicious Activity Report (SAR-101) with legal narrative and digital sign-off.
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(244, 63, 94, 0.15)", color: "#fda4af", border: "1px solid rgba(244, 63, 94, 0.3)" }}>Retroactive Customer Sweep</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(244, 63, 94, 0.15)", color: "#fda4af", border: "1px solid rgba(244, 63, 94, 0.3)" }}>Automated Account Freeze</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(244, 63, 94, 0.15)", color: "#fda4af", border: "1px solid rgba(244, 63, 94, 0.3)" }}>1-Click FinCEN SAR-101</span>
+                <span style={{ fontSize: "0.72rem", padding: "2px 8px", borderRadius: 4, background: "rgba(244, 63, 94, 0.15)", color: "#fda4af", border: "1px solid rgba(244, 63, 94, 0.3)" }}>Print-Ready Legal Narrative</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
