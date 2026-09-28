@@ -12,6 +12,8 @@ import {
 import { isSupabaseConfigured } from "../services/supabaseClient";
 
 export default function Navbar({ 
+  currentUser,
+  onSignOut,
   onOpenNewApplicant, 
   onOpenRescreen, 
   onOpenSettings, 
@@ -92,6 +94,51 @@ export default function Navbar({
 
         {/* Global Action Toolbar */}
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+          {/* Active User Info & Sign Out */}
+          {currentUser && (
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "4px 10px 4px 6px",
+              borderRadius: 20,
+              background: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid var(--border-subtle)"
+            }}>
+              <div style={{
+                width: 28,
+                height: 28,
+                borderRadius: "50%",
+                background: "rgba(99, 102, 241, 0.2)",
+                border: `1px solid ${currentUser.badgeColor || '#38bdf8'}`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                color: currentUser.badgeColor || "#38bdf8"
+              }}>
+                {currentUser.avatar || "OF"}
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span style={{ fontSize: "0.775rem", fontWeight: 700, color: "#fff", lineHeight: 1.1 }}>
+                  {currentUser.name}
+                </span>
+                <span style={{ fontSize: "0.65rem", color: currentUser.badgeColor || "var(--text-muted)", fontWeight: 600 }}>
+                  {currentUser.role}
+                </span>
+              </div>
+              <button
+                onClick={onSignOut}
+                className="btn btn-secondary"
+                style={{ padding: "2px 8px", fontSize: "0.7rem", marginLeft: 4 }}
+                title="Return to Public Landing Page"
+              >
+                Exit Terminal
+              </button>
+            </div>
+          )}
+
           {/* Feature 5 Killer Feature Trigger */}
           <button 
             className="btn"

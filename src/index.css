@@ -304,3 +304,45 @@ h1, h2, h3, h4 {
 .glow-rose {
   box-shadow: var(--glow-rose);
 }
+
+/* 3D Motion Frames & Perspective */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg) scale(1.02);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.35);
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-1deg); }
+}
+
+.floating-element {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.floating-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.45;
+}

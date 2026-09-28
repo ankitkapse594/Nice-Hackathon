@@ -33,7 +33,19 @@ import {
   FileText
 } from "lucide-react";
 
+import LandingPage from "./components/LandingPage";
+import LoginModal, { DEMO_USERS } from "./components/LoginModal";
+
 export default function App() {
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem("kyc_active_user");
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+
   const [activeMainTab, setActiveMainTab] = useState("applicants"); // 'applicants', 'adjudication', 'audit', 'watchlist'
 
   // Application Data State
@@ -43,6 +55,7 @@ export default function App() {
   const [auditLogs, setAuditLogs] = useState([]);
 
   // Modal States
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isApplicantModalOpen, setIsApplicantModalOpen] = useState(false);
   const [isRescreenModalOpen, setIsRescreenModalOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -96,14 +109,42 @@ export default function App() {
     (w.alias_names && w.alias_names.some(al => al.toLowerCase().includes(watchlistSearch.toLowerCase())))
   );
 
+  const handleLoginSuccess = (user) => {
+    setCurrentUser(user);
+    localStorage.setItem("kyc_active_user", JSON.stringify(user));
+  };
+
+  const handleSignOut = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("kyc_active_user");
+  };
+
+  if (!currentUser) {
+    return (
+      <>
+        <LandingPage
+          onOpenLogin={() => setIsLoginModalOpen(true)}
+          onEnterDemo={() => handleLoginSuccess(DEMO_USERS[0])}
+        />
+        <LoginModal
+          isOpen={isLoginModalOpen}
+          onClose={() => setIsLoginModalOpen(false)}
+          onLoginSuccess={handleLoginSuccess}
+        />
+      </>
+    );
+  }
+
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       {/* Top Navbar */}
       <Navbar
+        currentUser={currentUser}
+        onSignOut={handleSignOut}
         onOpenNewApplicant={() => setIsApplicantModalOpen(true)}
         onOpenRescreen={() => setIsRescreenModalOpen(true)}
         onOpenSettings={() => setIsSettingsOpen(true)}
-        onRunStp={() => runStpBatchApproval("Lead Compliance Officer")}
+        onRunStp={() => runStpBatchApproval(currentUser?.name || "Lead Compliance Officer")}
         onResetData={resetToInitialData}
         stpCount={eligibleStpCount}
       />
